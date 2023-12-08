@@ -1,40 +1,16 @@
-#include <iostream>
-using namespace std;
+def is_palindrome(num):
+    return str(num) == str(num)[::-1]
 
-int opposite(int n);
+def find_largest_palindrome():
+    largest_palindrome = 0
 
-int main() {
+    for i in range(99, 900):
+        for j in range(99, 900):
+            product = i * j
+            if is_palindrome(product) and product > largest_palindrome:
+                largest_palindrome = product
 
-  int greatest = 0;
-
-	for (int i = 100; i <= 999; i++) {
-
-		for (int j = 100; j <= 999; j++) {
-
-			if (i*j==opposite(i*j) and i*j > greatest)
-
-				greatest = i*j;
-		}
-
-	}
-
-	cout << greatest;
-
-	return 0;
-}
-
-int opposite(int n) {
-
-	int m = 0;
-
-	while (n > 0) {
-
-		m = m * 10 + n % 10;
-		n = n / 10;
-	}
-
-	return m;
-}
+    return largest_palindrome
 # Find the largest palindrome
 result = find_largest_palindrome()
 
